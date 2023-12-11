@@ -1,0 +1,1 @@
+# Faça um algoritmo para calcular a média aritmética entre duas notas de alunos e mostre, que pode ser aprovado ou reprovado. A média para ser aprovado é 7.

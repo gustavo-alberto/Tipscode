@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Média Aritmética</title>
+    </head>
+    <body>
+         <div class="main">
+            <h1>Sistema de Notas</h1>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Aluno</th>
+                        <th>Nota 1</th>
+                        <th>Nota 2</th>
+                        <th>Nota Final</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aluno</td>
+                        <td><input class="number__field" id="nota1" type="number" placeholder="Digite a nota" step="0.1" min="0" max="10"></td>
+                        <td><input class="number__field" id="nota2" type="number" placeholder="Digite a nota" step="0.1" min="0" max="10"></td>
+                        <td><p id="notaFinal"></p></td>
+                        <td><div class="reproved" id="status">Reprovado</div></td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+         <script src="script.js"></script>
+    </body>
+</html>

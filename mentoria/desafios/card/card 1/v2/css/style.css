@@ -80,6 +80,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transform: rotateX(0deg);
 }
 
 .card__face--back {

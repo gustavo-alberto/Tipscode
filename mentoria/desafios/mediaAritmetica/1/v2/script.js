@@ -103,6 +103,10 @@ function addRowToList(alunoName){
     row_notaFinal.appendChild(notaFinal); // populate nota final cell
     row_final_result.appendChild(status); // populate resultado cell
     action_button.appendChild(delButton);  // populate action button cell
+
+    delButton.onclick = function(){
+        removeAluno(this)
+    }
 }
 
 // recalculate values. target means nota final id
@@ -139,4 +143,10 @@ function filterItems(e){
             alunoName.style.display = 'none';
         }
     });
+}
+
+// delete aluno row
+function removeAluno(botao){
+    let linha = botao.parentNode.parentNode;
+    linha.parentNode.removeChild(linha);
 }

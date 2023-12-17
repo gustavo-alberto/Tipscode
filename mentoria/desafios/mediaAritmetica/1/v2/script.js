@@ -6,21 +6,28 @@ filter.addEventListener('keyup', filterItems); // Filter event
 
 // Detect any change on page
 document.addEventListener('change', (e) => {
-    let nota1 = document.getElementById(e.target.parentNode.parentNode.id).childNodes[1] // get the second element (nota 1) in table row
-    nota1 = nota1.childNodes[0].value // get the value of the second element in table row
-    nota1 = convertToNumber(nota1) // ensure that is converted to number type
+
+    try {
+        let nota1 = document.getElementById(e.target.parentNode.parentNode.id).childNodes[1] // get the second element (nota 1) in table row
+        nota1 = nota1.childNodes[0].value // get the value of the second element in table row
+        nota1 = convertToNumber(nota1) // ensure that is converted to number type
+        
+        let nota2 = document.getElementById(e.target.parentNode.parentNode.id).childNodes[2] // get the value of the third element (nota 2) in table row
+        nota2 = nota2.childNodes[0].value // get the value of the third element in table row
+        nota2 = convertToNumber(nota2) // ensure that is converted to number type
     
-    let nota2 = document.getElementById(e.target.parentNode.parentNode.id).childNodes[2] // get the value of the third element (nota 2) in table row
-    nota2 = nota2.childNodes[0].value // get the value of the third element in table row
-    nota2 = convertToNumber(nota2) // ensure that is converted to number type
+        let notaFinal = document.getElementById(e.target.parentNode.parentNode.id).childNodes[3] // get the value of the fourth element (nota final) in table row
+        notaFinal = notaFinal.childNodes[0].id // get the id of the fourth element in table row
+    
+        let status = document.getElementById(e.target.parentNode.parentNode.id).childNodes[4] // get the value of the fifth element (situação) in table row
+        status = status.childNodes[0].id // get the id of the fifth element in table row
+    
+        updateNotaFinal(notaFinal, nota1, nota2, status); // recalculate values
+    }
+    catch {
+        // do nothing
+    }
 
-    let notaFinal = document.getElementById(e.target.parentNode.parentNode.id).childNodes[3] // get the value of the fourth element (nota final) in table row
-    notaFinal = notaFinal.childNodes[0].id // get the id of the fourth element in table row
-
-    let status = document.getElementById(e.target.parentNode.parentNode.id).childNodes[4] // get the value of the fifth element (situação) in table row
-    status = status.childNodes[0].id // get the id of the fifth element in table row
-
-    updateNotaFinal(notaFinal, nota1, nota2, status); // recalculate values
 });
 
 function addAluno(e){
